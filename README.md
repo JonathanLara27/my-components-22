@@ -1,59 +1,22 @@
-# MyForm22
+# Components Design System
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.0-rc.1.
+[![Angular](https://img.shields.io/badge/Angular-17+-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
+[![Sass](https://img.shields.io/badge/Sass-hotpink?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
+[![Bun](https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white)](https://bun.sh/)
 
-## Development server
+Librería de componentes UI y sistema de diseño modular basado en **Angular**, estructurado bajo los principios de **Clean Architecture** y **Atomic Design**. Este proyecto centraliza los *Design Tokens* y componentes core para Grupo Red Salud, garantizando consistencia visual, escalabilidad y mantenibilidad.
 
-To start a local development server, run:
+## 🚀 Características Principales
 
-```bash
-ng serve
-```
+* **Arquitectura Modular:** Basado en el patrón 7-1 (ITCSS), separando tokens, componentes y layouts.
+* **Tokens Semánticos:** Sistema de variables que permite *theming* completo (branding) sin modificar la lógica del componente.
+* **Reactividad Eficiente:** Implementación con `ChangeDetectionStrategy.OnPush` y Angular Signals.
+* **Tipografía y Grilla:** Sistema robusto de utilidades CSS para layouts coherentes.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 📂 Estructura del Proyecto
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+src/app/scss/
+├── abstracts/    # Variables (Tokens), Mixins, Funciones
+├── base/         # Reset, Utilities, Tipografía
+├── components/   # Botones, Cards, Inputs, Banners
+└── layout/       # Grid System, Page Layouts
