@@ -15,6 +15,7 @@ Librería de componentes UI y sistema de diseño modular basado en **Angular**, 
 
 ## 📂 Estructura del Proyecto
 
+```text
 src/app/scss/
 ├── abstracts/    # Variables (Tokens), Mixins, Funciones
 ├── base/         # Reset, Utilities, Tipografía
