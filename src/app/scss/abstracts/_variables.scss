@@ -1,0 +1,162 @@
+// ==========================================================================
+// 🎨 SISTEMA DE DISEÑO - ARQUITECTURA DE TOKENS (MATERIAL STYLE)
+// Archivo: src/scss/abstracts/_variables.scss
+// ==========================================================================
+
+:root {
+    // ========================================================================
+    // 🟢 CAPA 1: PALETA PRIMITIVA (Color crudo, sin significado)
+    // Aquí solo definimos la escala de colores disponibles.
+    // ========================================================================
+
+    // Nueva Escala Cyan (Sacada de tu imagen)
+    --rs-cyan-300: #b2ebf2; // Light Primary
+    --rs-cyan-500: #00bcd4; // Primary Color
+    --rs-cyan-700: #0097a7; // Dark Primary
+
+    // Nueva Escala Accent/Amber
+    --rs-amber-500: #ffc107; // Accent Color
+    --rs-amber-700: #e6a700; // Generamos uno más oscuro para el hover manual
+
+    // Escala de Grises actualizada a la imagen
+    --rs-gray-200: #e2e8f0; // Lo mantenemos para fondos suaves
+    --rs-gray-400: #bdbdbd; // Divider Color
+    --rs-gray-600: #757575; // Secondary Text
+    --rs-gray-900: #212121; // Primary Text
+
+    // Absolutos
+    --rs-white: #ffffff; // Text / Icons
+    --rs-black: #000000;
+
+    // Colores de Estado Universales (Semántica global)
+    --rs-success-100: #dcfce7;
+    --rs-success-500: #00c853;
+    --rs-success-700: #15803d;
+
+    --rs-warning-100: #fffbeb;
+    --rs-warning-500: #f57f17;
+    --rs-warning-700: #92400e;
+
+    --rs-error-100: #fef2f2;
+    --rs-error-500: #ff0000;
+    --rs-error-700: #991b1b;
+
+    --rs-info-100: #eff6ff;
+    --rs-info-500: #3b82f6;
+    --rs-info-700: #1e3a8a;
+
+    // Tipografía Base
+    --rs-font-family-base: "Inter", "Roboto", sans-serif;
+    --rs-font-size-xs: 0.75rem; // 12px
+    --rs-font-size-sm: 0.875rem; // 14px
+    --rs-font-size-md: 1rem; // 16px
+    --rs-font-size-lg: 1.125rem; // 18px
+    --rs-font-size-xl: 1.25rem; // 20px
+    --rs-font-weight-regular: 400;
+    --rs-font-weight-medium: 500;
+    --rs-font-weight-bold: 700;
+
+    // 📏 Espaciados (Vital para los paddings y gaps)
+    --rs-spacing-xs: 4px;
+    --rs-spacing-sm: 8px;
+    --rs-spacing-md: 16px;
+    --rs-spacing-lg: 24px;
+    --rs-spacing-xl: 32px;
+    --rs-spacing-xxl: 48px;
+
+    // ⏱️ Transiciones (Para el hover de los botones)
+    --rs-transition-fast: 150ms ease-in-out;
+    --rs-transition-normal: 250ms ease-in-out;
+
+    // ========================================================================
+    // 🟡 CAPA 2: TOKENS SEMÁNTICOS (EL TEMA DEL PROYECTO)
+    // ¡ESTA ES LA ÚNICA SECCIÓN QUE CAMBIA POR PROYECTO!
+    // ========================================================================
+
+    // 🔴 Paleta Primaria (Ahora es Cyan)
+    --rs-primary: var(--rs-cyan-500);
+    --rs-primary-variant: var(--rs-cyan-700);
+    --rs-on-primary: var(--rs-white);
+
+    // 🔵 Paleta Secundaria (El "Accent Color" de tu imagen)
+    --rs-secondary: var(--rs-amber-500);
+    --rs-secondary-variant: var(--rs-amber-700);
+    // ⚠️ ALERTA UX: Texto oscuro sobre amarillo. El blanco (#FFFFFF) sobre #FFC107 no se lee.
+    --rs-on-secondary: var(--rs-gray-900);
+
+    // 🩵 Paleta Terciaria (Podemos usar el Light Primary para acciones suaves)
+    // --rs-tertiary: var(--rs-cyan-300);
+    // --rs-tertiary-variant: var(--rs-cyan-500);
+    // --rs-on-tertiary: var(--rs-gray-900);
+
+    // 🎨 Superficies y Fondos
+    --rs-background: var(--rs-gray-200);
+    --rs-surface: var(--rs-white);
+    --rs-surface-variant: var(--rs-cyan-300); // Podemos usar el celeste claro para los hover sutiles
+
+    // Textos y divisores mapeados a tu imagen
+    --rs-on-surface: var(--rs-gray-900); // #212121
+    --rs-on-surface-variant: var(--rs-gray-600); // #757575
+    --rs-outline: var(--rs-gray-400); // #BDBDBD
+
+    // 🌫️ Sombras y Elevaciones
+    --rs-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --rs-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    // 📐 Radios de Borde (Shapes)
+    --rs-shape-small: 6px;
+    --rs-shape-medium: 16px;
+    --rs-shape-large: 24px;
+    --rs-shape-pill: 50px;
+
+    // ========================================================================
+    // 🔴 CAPA 3: TOKENS DE COMPONENTE (Estrictamente mapeados a la Capa 2)
+    // Los componentes NUNCA usan colores quemados, solo Tokens Semánticos.
+    // ========================================================================
+
+    // 🔘 Botones
+    --rs-btn-primary-bg: var(--rs-primary);
+    --rs-btn-primary-hover: var(--rs-primary-variant);
+    --rs-btn-primary-text: var(--rs-on-primary);
+    --rs-btn-radius: var(--rs-shape-pill);
+
+    // 📝 Inputs
+    --rs-input-bg: var(--rs-surface-variant);
+    --rs-input-border: transparent;
+    --rs-input-focus: var(--rs-secondary);
+    --rs-input-radius: var(--rs-shape-large);
+
+    // 🪗 Expansion Panels (Acordeones)
+    --rs-expansion-bg-default: var(--rs-surface-variant);
+    --rs-expansion-bg-expanded: var(--rs-surface);
+    --rs-expansion-text-color: var(--rs-secondary);
+    --rs-expansion-icon-color: var(--rs-primary);
+
+    // 🚩 Banners
+    --rs-banner-info-bg: var(--rs-info-100);
+    --rs-banner-info-icon: var(--rs-info-500);
+    --rs-banner-info-text: var(--rs-info-700);
+
+    --rs-banner-error-bg: var(--rs-error-100);
+    --rs-banner-error-icon: var(--rs-error);
+    --rs-banner-error-text: var(--rs-error-700);
+
+    --rs-banner-neutral-bg: var(--rs-background);
+    --rs-banner-neutral-icon: var(--rs-gray-500);
+    --rs-banner-neutral-text: var(--rs-gray-700);
+
+    // 📋 Badges de Negocio
+    // (Si estos estados son estándar en la empresa, se quedan aquí.
+    // Si varían por proyecto, deberían mapearse a success/warning/error/info).
+    --rs-badge-eval-bg: var(--rs-warning-100);
+    --rs-badge-eval-text: var(--rs-warning-700);
+
+    --rs-badge-ready-bg: var(--rs-info-100);
+    --rs-badge-ready-text: var(--rs-info-700);
+
+    --rs-badge-won-bg: var(--rs-success-500);
+    --rs-badge-won-text: var(--rs-white);
+
+    --rs-badge-lost-bg: var(--rs-error);
+    --rs-badge-lost-text: var(--rs-on-error);
+}

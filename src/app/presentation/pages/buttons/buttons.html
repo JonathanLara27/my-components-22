@@ -1,0 +1,38 @@
+<div class="page-wrapper">
+    <div class="container">
+
+        <header class="page-header">
+            <h1 class="page-title">Catálogo de Botones</h1>
+        </header>
+
+        <main class="page-content">
+            <div class="grid-auto-sm gap-6">
+
+                @for (btn of buttonCatalog(); track btn.label) {
+
+                    <div class="card">
+                        <div class="card-body d-flex flex-column align-center justify-center gap-4">
+
+                            <button [class]="['btn', btn.variantClass, btn.sizeClass || '']" [disabled]="btn.isDisabled">
+
+                                @if (btn.icon) {
+                                    <span class="material-symbols-outlined">{{ btn.icon }}</span>
+                                }
+
+                                @if (btn.label) {
+                                    <span class="btn-label">{{ btn.label }}</span>
+                                }
+                            </button>
+
+                            <span class="text-muted fs-xs font-medium">.{{ btn.variantClass }} {{ btn.sizeClass || ''
+                                }}</span>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </main>
+
+    </div>
+</div>

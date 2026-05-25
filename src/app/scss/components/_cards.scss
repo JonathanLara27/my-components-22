@@ -1,0 +1,50 @@
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--rs-surface, #ffffff);
+  border: 1px solid var(--rs-surface-variant, #e2e8f0);
+  border-radius: var(--rs-shape-medium, 16px);
+  box-shadow: var(--rs-shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.05));
+  overflow: hidden; // Para que el contenido respete los bordes redondeados
+  transition: box-shadow var(--rs-transition-fast, 150ms) ease;
+
+  // Variante hover para tarjetas clickeables
+  &.card-interactive:hover {
+    box-shadow: var(--rs-shadow-md, 0 4px 12px rgba(0, 0, 0, 0.1));
+    cursor: pointer;
+    transform: translateY(-2px);
+  }
+}
+
+.card-header {
+  padding: var(--rs-spacing-md, 16px) var(--rs-spacing-lg, 24px);
+  border-bottom: 1px solid var(--rs-surface-variant, #e2e8f0);
+  background-color: var(--rs-surface, #ffffff);
+  font-weight: var(--rs-font-weight-bold, 700);
+  color: var(--rs-secondary, #01387b);
+}
+
+.card-body {
+  padding: var(--rs-spacing-lg, 24px);
+  flex: 1; // Permite que el body crezca si la card tiene altura fija
+}
+
+.card-footer {
+  padding: var(--rs-spacing-md, 16px) var(--rs-spacing-lg, 24px);
+  border-top: 1px solid var(--rs-surface-variant, #e2e8f0);
+  background-color: var(--rs-background, #f8fafc);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--rs-spacing-md, 16px);
+}
+
+// Variante para el "Showcase" (tarjetas punteadas para ejemplos de UI)
+.card-showcase {
+  border: 1px dashed var(--rs-border-medium, #cbd5e1);
+  background-color: var(--rs-background, #f8fafc);
+  box-shadow: none;
+  align-items: center;
+  justify-content: center;
+}

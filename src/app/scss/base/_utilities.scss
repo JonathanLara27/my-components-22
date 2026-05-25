@@ -1,0 +1,186 @@
+@use "../abstracts/mixins";
+// 📝 1. TIPOGRAFÍA Y COLORES (Conectado a Tokens Semánticos)
+.text-primary {
+  color: var(--rs-primary) !important;
+}
+.text-body {
+  color: var(--rs-on-surface) !important;
+}
+.text-muted {
+  color: var(--rs-on-surface-variant) !important;
+}
+.text-danger {
+  color: var(--rs-error) !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+
+.font-normal {
+  font-weight: var(--rs-font-weight-regular, 400) !important;
+}
+.font-medium {
+  font-weight: var(--rs-font-weight-medium, 500) !important;
+}
+.font-bold {
+  font-weight: var(--rs-font-weight-bold, 700) !important;
+}
+
+// 📐 2. LAYOUT Y DISPLAY
+.w-full {
+  width: 100% !important;
+}
+.d-flex {
+  display: flex !important;
+}
+
+// Flex Direction & Justify/Align (Se mantiene igual)
+.flex-row {
+  flex-direction: row !important;
+}
+.flex-column {
+  flex-direction: column !important;
+}
+.justify-start {
+  justify-content: flex-start !important;
+}
+.justify-center {
+  justify-content: center !important;
+}
+.justify-between {
+  justify-content: space-between !important;
+}
+.justify-end {
+  justify-content: flex-end !important;
+}
+.align-start {
+  align-items: flex-start !important;
+}
+.align-center {
+  align-items: center !important;
+}
+.align-between {
+  align-content: space-between !important;
+} // Corregido align-items a align-content
+.align-end {
+  align-items: flex-end !important;
+}
+
+// 🚀 3. MOTOR DE ESPACIADO DINÁMICO (Márgenes, Paddings y Gaps)
+$spacer-base: 4px;
+
+@for $i from 0 through 10 {
+  // Ampliado hasta 10 (40px) para más holgura
+  $size: $i * $spacer-base;
+
+  .p-#{$i} {
+    padding: #{$size} !important;
+  }
+  .pt-#{$i} {
+    padding-top: #{$size} !important;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$size} !important;
+  }
+  .pl-#{$i} {
+    padding-left: #{$size} !important;
+  }
+  .pr-#{$i} {
+    padding-right: #{$size} !important;
+  }
+  .px-#{$i} {
+    padding-left: #{$size} !important;
+    padding-right: #{$size} !important;
+  }
+  .py-#{$i} {
+    padding-top: #{$size} !important;
+    padding-bottom: #{$size} !important;
+  }
+
+  .m-#{$i} {
+    margin: #{$size} !important;
+  }
+  .mt-#{$i} {
+    margin-top: #{$size} !important;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$size} !important;
+  }
+  .ml-#{$i} {
+    margin-left: #{$size} !important;
+  }
+  .mr-#{$i} {
+    margin-right: #{$size} !important;
+  }
+  .mx-#{$i} {
+    margin-left: #{$size} !important;
+    margin-right: #{$size} !important;
+  }
+  .my-#{$i} {
+    margin-top: #{$size} !important;
+    margin-bottom: #{$size} !important;
+  }
+
+  .gap-#{$i} {
+    gap: #{$size} !important;
+  }
+}
+
+.mt-auto {
+  margin-top: auto !important;
+}
+.mb-auto {
+  margin-bottom: auto !important;
+}
+.ml-auto {
+  margin-left: auto !important;
+}
+.mr-auto {
+  margin-right: auto !important;
+}
+
+// 🔠 4. TAMAÑOS DE FUENTE
+// Idealmente, se consumen los tokens directamente en los componentes, pero como utilidad sirven.
+.fs-xs {
+  font-size: var(--rs-font-size-xs, 12px) !important;
+}
+.fs-sm {
+  font-size: var(--rs-font-size-sm, 14px) !important;
+}
+.fs-md {
+  font-size: var(--rs-font-size-md, 16px) !important;
+}
+.fs-lg {
+  font-size: var(--rs-font-size-lg, 18px) !important;
+}
+.fs-xl {
+  font-size: var(--rs-font-size-xl, 20px) !important;
+}
+
+/* =============================================================
+   ✅ GRID UTILITIES
+   ============================================================= */
+.grid-auto {
+  @include mixins.grid-auto-fit(300px, 24px);
+}
+
+.grid-auto-sm {
+  @include mixins.grid-auto-fit(200px, 16px);
+}
+
+@for $i from 1 through 6 {
+  .grid-cols-#{$i} {
+    @include mixins.grid-cols($i, 20px);
+  }
+}
+
+.col-span-full {
+  grid-column: 1 / -1 !important;
+}

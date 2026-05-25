@@ -1,0 +1,48 @@
+// ==========================================================================
+// 📐 COMPONENTE: PAGE LAYOUT
+// Archivo: src/app/scss/layout/_page-layout.scss
+// ==========================================================================
+
+// Contenedor principal de la página
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+//   background-color: var(--rs-gray-50); // Fondo claro para toda la página
+}
+
+// Contenedor que centra el contenido y le da un ancho máximo
+.container {
+  width: 100%;
+  max-width: 1200px; // Ancho máximo estándar para dashboards/ERP
+  margin: 0 auto;
+  padding: 0 var(--rs-spacing-lg, 24px);
+
+  // Fluido en móviles, con márgenes en pantallas grandes
+  @media (max-width: 768px) {
+    padding: 0 var(--rs-spacing-md, 16px);
+  }
+}
+
+// Cabecera estándar de las páginas (donde va el título y botones de acción)
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--rs-spacing-xl, 32px) 0 var(--rs-spacing-lg, 24px) 0;
+  border-bottom: 1px solid var(--rs-surface-variant);
+  margin-bottom: var(--rs-spacing-lg, 24px);
+
+  .page-title {
+    margin: 0;
+    color: var(--rs-primary, #cc1d23);
+    font-size: var(--rs-font-size-xl, 24px);
+    font-weight: var(--rs-font-weight-bold, 700);
+  }
+}
+
+// Área de contenido principal
+.page-content {
+  flex: 1;
+  padding-bottom: var(--rs-spacing-xxl, 48px);
+}

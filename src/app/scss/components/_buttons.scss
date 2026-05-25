@@ -1,0 +1,199 @@
+
+// 📦 1. BASE DEL BOTÓN (La estructura)
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    // 🛡️ Valores con fallback por si alguna variable falla
+    gap: var(--rs-spacing-sm, 8px);
+    height: 44px;
+    padding: 0 var(--rs-spacing-lg, 24px);
+    border-radius: var(--rs-btn-radius, 50px);
+
+    // Tipografía y reset de bordes
+    font-family: var(--rs-font-family-base, "Inter", sans-serif);
+    font-size: var(--rs-font-size-md, 16px);
+    font-weight: var(--rs-font-weight-medium, 500);
+    border: 1px solid transparent;
+    background-color: transparent; // Reset por si acaso
+
+    transition: all var(--rs-transition-fast, 150ms) ease-in-out;
+    white-space: nowrap;
+    cursor: pointer;
+
+    // Interacción
+    &:active:not(:disabled) {
+        transform: scale(0.98);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--rs-primary, #cc1d23);
+        outline-offset: 2px;
+    }
+
+    // Estado deshabilitado universal
+    &:disabled {
+        cursor: not-allowed;
+        background-color: var(--rs-surface-variant, #f1f5f9) !important;
+        color: var(--rs-on-surface-variant, #64748b) !important;
+        border-color: transparent !important;
+        box-shadow: none !important;
+        transform: none;
+    }
+
+    // Ajuste para el texto dentro del botón
+    .btn-label {
+        margin-top: 1px;
+    }
+
+    // Ajuste universal para íconos dentro del botón
+    .material-symbols-outlined,
+    mat-icon,
+    svg {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: inherit;
+    }
+}
+
+// ==========================================================================
+// 🎨 2. VARIANTES SEMÁNTICAS (Llenos / Filled)
+// ==========================================================================
+
+// 🔴 PRIMARY (Alta prioridad)
+.btn-primary {
+    background-color: var(--rs-primary);
+    color: var(--rs-on-primary);
+
+    &:hover:not(:disabled) {
+        background-color: var(--rs-primary-variant);
+        box-shadow: var(--rs-shadow-md);
+    }
+}
+
+// 🔵 SECONDARY (Prioridad media)
+.btn-secondary {
+    background-color: var(--rs-secondary);
+    color: var(--rs-on-secondary);
+
+    &:hover:not(:disabled) {
+        background-color: var(--rs-secondary-variant);
+        box-shadow: var(--rs-shadow-md);
+    }
+}
+
+// 🩵 TERTIARY (Prioridad baja / Acentos)
+// .btn-tertiary {
+//     background-color: var(--rs-tertiary);
+//     color: var(--rs-on-tertiary);
+
+//     &:hover:not(:disabled) {
+//         background-color: var(--rs-tertiary-variant);
+//         box-shadow: var(--rs-shadow-md);
+//     }
+// }
+
+// ==========================================================================
+// ⚪ 3. VARIANTES DE CONTORNO Y TEXTO (Menor énfasis)
+// ==========================================================================
+
+// OUTLINE GENÉRICO (Cancelar, volver)
+.btn-outline {
+    background-color: transparent;
+    color: var(--rs-on-surface);
+    border-color: var(--rs-outline);
+
+    &:hover:not(:disabled) {
+        background-color: var(--rs-surface-variant);
+    }
+}
+
+// OUTLINE PRIMARY (Énfasis de marca sin relleno)
+.btn-outline-primary {
+    background-color: transparent;
+    color: var(--rs-primary);
+    border-color: var(--rs-primary);
+
+    &:hover:not(:disabled) {
+        background-color: color-mix(in srgb, var(--rs-primary) 10%, transparent);
+        border-color: var(--rs-primary-variant);
+        color: var(--rs-primary-variant);
+    }
+}
+// OUTLINE SECONDARY (Énfasis alternativo sin relleno)
+.btn-outline-secondary {
+    background-color: transparent;
+    color: var(--rs-secondary);
+    border-color: var(--rs-secondary);
+
+    &:hover:not(:disabled) {
+        background-color: color-mix(in srgb, var(--rs-secondary) 10%, transparent);
+        border-color: var(--rs-secondary-variant);
+        color: var(--rs-secondary-variant);
+    }
+}
+
+// OUTLINE TERTIARY (Énfasis de acento sin relleno)
+// .btn-outline-tertiary {
+//     background-color: transparent;
+//     color: var(--rs-tertiary);
+//     border-color: var(--rs-tertiary);
+
+//     &:hover:not(:disabled) {
+//         background-color: color-mix(in srgb, var(--rs-tertiary) 10%, transparent);
+//         border-color: var(--rs-tertiary-variant);
+//         color: var(--rs-tertiary-variant);
+//     }
+// }
+
+// TEXT BUTTON (Botón fantasma)
+.btn-text {
+    background-color: transparent;
+    color: var(--rs-primary);
+    padding: 0 var(--rs-spacing-md);
+
+    &:hover:not(:disabled) {
+        background-color: color-mix(in srgb, var(--rs-primary) 10%, transparent);
+    }
+}
+
+// ==========================================================================
+// 📏 4. MODIFICADORES DE TAMAÑO Y FORMA
+// ==========================================================================
+
+// Tamaños
+.btn-sm {
+    height: 32px;
+    padding: 0 var(--rs-spacing-md);
+    font-size: var(--rs-font-size-sm);
+}
+
+.btn-lg {
+    height: 52px;
+    padding: 0 var(--rs-spacing-xl);
+    font-size: var(--rs-font-size-lg);
+}
+
+// Solo Ícono (Cuadrado/Circular)
+.btn-icon {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+
+    &.btn-sm {
+        width: 32px;
+        height: 32px;
+    }
+
+    &.btn-lg {
+        width: 52px;
+        height: 52px;
+    }
+}
